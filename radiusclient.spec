@@ -2,15 +2,16 @@ Summary:	Radiusclient library and tools
 Summary(pl):	Biblioteka radiusclient oraz narzêdzia
 Name:		radiusclient
 Version:	0.3.2
-Release:	1
-License:	GPL
+Release:	2
+License:	BSD-like
 Group:		Libraries
 Source0:	ftp://ftp.cityline.net/pub/radiusclient/%{name}-%{version}.tar.gz
 # Source0-md5:	dd6a85f2f6fcb944cbf1dddd05ab132f
 Patch0:		%{name}-am_ac.patch
-BuildRequires:	libtool
-BuildRequires:	automake
+Patch1:		%{name}-nolibs.patch
 BuildRequires:	autoconf
+BuildRequires:	automake
+BuildRequires:	libtool
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %description
@@ -25,20 +26,21 @@ authenticate the user.
 Radiusclient jest zamiennikiem /bin/login wywo³ywanym przez getty
 w celu umo¿liwienia u¿ytkownikowi zalogowania siê. Normalne programy
 typu login sprawdzaj± nazwê u¿ytkownika oraz has³o wzglêdem lokalnego
-pliku (/etc/passwd, /etc/shadow). Radiusclient równie¿ u¿ywa protoko³u
-RADIUS w celu autentyfikacji u¿ytkownika.
+pliku (/etc/passwd, /etc/shadow). W przeciwieñstwie do nich
+Radiusclient u¿ywa tak¿e protoko³u RADIUS w celu uwierzytelnienia
+u¿ytkownika.
 
 %package devel
-Summary:	Header files and development documentation for radiusclient
-Summary(pl):	Pliki nag³ówkowe i dokumentacja do radiusclient
+Summary:	Header files for radiusclient library
+Summary(pl):	Pliki nag³ówkowe biblioteki radiusclient
 Group:		Development/Libraries
 Requires:	%{name} = %{version}
 
 %description devel
-Header files and development documentation for radiusclient.
+Header files for radiusclient library.
 
 %description devel -l pl
-Pliki nag³ówkowe i dokumentacja do Radiusclient.
+Pliki nag³ówkowe biblioteki radiusclient.
 
 %package static
 Summary:	Radiusclient static library
@@ -55,9 +57,9 @@ Statyczna biblioteka Radiusclient.
 %prep
 %setup -q
 %patch0 -p1
+%patch1 -p1
 
 %build
-rm -rf missing
 %{__libtoolize}
 %{__aclocal}
 %{__autoconf}
@@ -81,18 +83,17 @@ rm -rf $RPM_BUILD_ROOT
 
 %files
 %defattr(644,root,root,755)
-%doc BUGS CHANGES README* doc/*.html
+%doc BUGS CHANGES COPYRIGHT README* doc/*.html
 %attr(755,root,root) %{_sbindir}/*
-%attr(755,root,root) %{_libdir}/lib*.so.*
-
-%dir %{_sysconfdir}/radiusclient
-%attr(750,root,root) %config(missingok,noreplace) %verify(not md5 size mtime) %{_sysconfdir}/radiusclient/*
+%attr(755,root,root) %{_libdir}/lib*.so.*.*.*
+%attr(750,root,root) %dir %{_sysconfdir}/radiusclient
+%attr(640,root,root) %config(missingok,noreplace) %verify(not md5 size mtime) %{_sysconfdir}/radiusclient/*
 
 %files devel
 %defattr(644,root,root,755)
 %attr(755,root,root) %{_libdir}/lib*.so
 %{_libdir}/lib*.la
-%{_includedir}/*
+%{_includedir}/*.h
 
 %files static
 %defattr(644,root,root,755)
