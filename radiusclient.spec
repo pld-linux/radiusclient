@@ -2,7 +2,7 @@ Summary:	Radiusclient library and tools
 Summary(pl):	Biblioteka radiusclient oraz narzêdzia
 Name:		radiusclient
 Version:	0.3.2
-Release:	2
+Release:	3
 License:	BSD-like
 Group:		Libraries
 Source0:	ftp://ftp.cityline.net/pub/radiusclient/%{name}-%{version}.tar.gz
