@@ -56,6 +56,7 @@ Statyczna biblioteka Radiusclient.
 %patch0 -p1
 
 %build
+rm -rf missing
 %{__libtoolize}
 %{__aclocal}
 %{__autoconf}
