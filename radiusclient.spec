@@ -6,6 +6,7 @@ Release:	1
 License:	GPL
 Group:		Libraries
 Source0:	ftp://ftp.cityline.net/pub/radiusclient/%{name}-%{version}.tar.gz
+# Source0-md5:	dd6a85f2f6fcb944cbf1dddd05ab132f
 Patch0:		%{name}-am_ac.patch
 BuildRequires:	libtool
 BuildRequires:	automake
