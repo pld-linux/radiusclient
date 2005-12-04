@@ -23,8 +23,8 @@ contrast to that Radiusclient also uses the RADIUS protocol to
 authenticate the user.
 
 %description -l pl
-Radiusclient jest zamiennikiem /bin/login wywo³ywanym przez getty
-w celu umo¿liwienia u¿ytkownikowi zalogowania siê. Normalne programy
+Radiusclient jest zamiennikiem /bin/login wywo³ywanym przez getty w
+celu umo¿liwienia u¿ytkownikowi zalogowania siê. Normalne programy
 typu login sprawdzaj± nazwê u¿ytkownika oraz has³o wzglêdem lokalnego
 pliku (/etc/passwd, /etc/shadow). W przeciwieñstwie do nich
 Radiusclient u¿ywa tak¿e protoko³u RADIUS w celu uwierzytelnienia
@@ -87,7 +87,7 @@ rm -rf $RPM_BUILD_ROOT
 %attr(755,root,root) %{_sbindir}/*
 %attr(755,root,root) %{_libdir}/lib*.so.*.*.*
 %attr(750,root,root) %dir %{_sysconfdir}/radiusclient
-%attr(640,root,root) %config(missingok,noreplace) %verify(not md5 size mtime) %{_sysconfdir}/radiusclient/*
+%attr(640,root,root) %config(missingok,noreplace) %verify(not md5 mtime size) %{_sysconfdir}/radiusclient/*
 
 %files devel
 %defattr(644,root,root,755)
