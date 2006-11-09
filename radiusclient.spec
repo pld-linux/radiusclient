@@ -34,7 +34,7 @@ u¿ytkownika.
 Summary:	Header files for radiusclient library
 Summary(pl):	Pliki nag³ówkowe biblioteki radiusclient
 Group:		Development/Libraries
-Requires:	%{name} = %{version}
+Requires:	%{name} = %{version}-%{release}
 
 %description devel
 Header files for radiusclient library.
@@ -46,7 +46,7 @@ Pliki nag³ówkowe biblioteki radiusclient.
 Summary:	Radiusclient static library
 Summary(pl):	Statyczna biblioteka radiusclient
 Group:		Development/Libraries
-Requires:	%{name}-devel = %{version}
+Requires:	%{name}-devel = %{version}-%{release}
 
 %description static
 Radiusclient static library.
