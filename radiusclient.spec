@@ -1,5 +1,5 @@
 Summary:	Radiusclient library and tools
-Summary(pl):	Biblioteka radiusclient oraz narzÍdzia
+Summary(pl.UTF-8):   Biblioteka radiusclient oraz narzƒôdzia
 Name:		radiusclient
 Version:	0.3.2
 Release:	3
@@ -22,36 +22,36 @@ entered against the local password file (/etc/passwd, /etc/shadow). In
 contrast to that Radiusclient also uses the RADIUS protocol to
 authenticate the user.
 
-%description -l pl
-Radiusclient jest zamiennikiem /bin/login wywo≥ywanym przez getty w
-celu umoøliwienia uøytkownikowi zalogowania siÍ. Normalne programy
-typu login sprawdzaj± nazwÍ uøytkownika oraz has≥o wzglÍdem lokalnego
-pliku (/etc/passwd, /etc/shadow). W przeciwieÒstwie do nich
-Radiusclient uøywa takøe protoko≥u RADIUS w celu uwierzytelnienia
-uøytkownika.
+%description -l pl.UTF-8
+Radiusclient jest zamiennikiem /bin/login wywo≈Çywanym przez getty w
+celu umo≈ºliwienia u≈ºytkownikowi zalogowania siƒô. Normalne programy
+typu login sprawdzajƒÖ nazwƒô u≈ºytkownika oraz has≈Ço wzglƒôdem lokalnego
+pliku (/etc/passwd, /etc/shadow). W przeciwie≈Ñstwie do nich
+Radiusclient u≈ºywa tak≈ºe protoko≈Çu RADIUS w celu uwierzytelnienia
+u≈ºytkownika.
 
 %package devel
 Summary:	Header files for radiusclient library
-Summary(pl):	Pliki nag≥Ûwkowe biblioteki radiusclient
+Summary(pl.UTF-8):   Pliki nag≈Ç√≥wkowe biblioteki radiusclient
 Group:		Development/Libraries
 Requires:	%{name} = %{version}-%{release}
 
 %description devel
 Header files for radiusclient library.
 
-%description devel -l pl
-Pliki nag≥Ûwkowe biblioteki radiusclient.
+%description devel -l pl.UTF-8
+Pliki nag≈Ç√≥wkowe biblioteki radiusclient.
 
 %package static
 Summary:	Radiusclient static library
-Summary(pl):	Statyczna biblioteka radiusclient
+Summary(pl.UTF-8):   Statyczna biblioteka radiusclient
 Group:		Development/Libraries
 Requires:	%{name}-devel = %{version}-%{release}
 
 %description static
 Radiusclient static library.
 
-%description static -l pl
+%description static -l pl.UTF-8
 Statyczna biblioteka Radiusclient.
 
 %prep
