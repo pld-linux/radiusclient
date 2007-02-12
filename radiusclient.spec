@@ -1,5 +1,5 @@
 Summary:	Radiusclient library and tools
-Summary(pl.UTF-8):   Biblioteka radiusclient oraz narzędzia
+Summary(pl.UTF-8):	Biblioteka radiusclient oraz narzędzia
 Name:		radiusclient
 Version:	0.3.2
 Release:	3
@@ -32,7 +32,7 @@ użytkownika.
 
 %package devel
 Summary:	Header files for radiusclient library
-Summary(pl.UTF-8):   Pliki nagłówkowe biblioteki radiusclient
+Summary(pl.UTF-8):	Pliki nagłówkowe biblioteki radiusclient
 Group:		Development/Libraries
 Requires:	%{name} = %{version}-%{release}
 
@@ -44,7 +44,7 @@ Pliki nagłówkowe biblioteki radiusclient.
 
 %package static
 Summary:	Radiusclient static library
-Summary(pl.UTF-8):   Statyczna biblioteka radiusclient
+Summary(pl.UTF-8):	Statyczna biblioteka radiusclient
 Group:		Development/Libraries
 Requires:	%{name}-devel = %{version}-%{release}
 
