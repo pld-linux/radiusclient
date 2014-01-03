@@ -85,7 +85,7 @@ rm -rf $RPM_BUILD_ROOT
 %defattr(644,root,root,755)
 %doc BUGS CHANGES COPYRIGHT README* doc/*.html
 %attr(755,root,root) %{_sbindir}/*
-%attr(755,root,root) %ghost %{_libdir}/lib*.so.?
+%attr(755,root,root) %ghost %{_libdir}/lib*.so.0
 %attr(755,root,root) %{_libdir}/lib*.so.*.*.*
 %attr(750,root,root) %dir %{_sysconfdir}/radiusclient
 %attr(640,root,root) %config(missingok,noreplace) %verify(not md5 mtime size) %{_sysconfdir}/radiusclient/*
