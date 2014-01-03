@@ -2,7 +2,7 @@ Summary:	Radiusclient library and tools
 Summary(pl.UTF-8):	Biblioteka radiusclient oraz narzędzia
 Name:		radiusclient
 Version:	0.3.2
-Release:	3
+Release:	4
 License:	BSD-like
 Group:		Libraries
 Source0:	ftp://ftp.cityline.net/pub/radiusclient/%{name}-%{version}.tar.gz
@@ -85,6 +85,7 @@ rm -rf $RPM_BUILD_ROOT
 %defattr(644,root,root,755)
 %doc BUGS CHANGES COPYRIGHT README* doc/*.html
 %attr(755,root,root) %{_sbindir}/*
+%attr(755,root,root) %ghost %{_libdir}/lib*.so.?
 %attr(755,root,root) %{_libdir}/lib*.so.*.*.*
 %attr(750,root,root) %dir %{_sysconfdir}/radiusclient
 %attr(640,root,root) %config(missingok,noreplace) %verify(not md5 mtime size) %{_sysconfdir}/radiusclient/*
