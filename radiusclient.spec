@@ -63,6 +63,7 @@ Statyczna biblioteka Radiusclient.
 %{__libtoolize}
 %{__aclocal}
 %{__autoconf}
+%{__autoheader}
 %{__automake}
 %configure \
 	--enable-shadow \
@@ -84,18 +85,29 @@ rm -rf $RPM_BUILD_ROOT
 %files
 %defattr(644,root,root,755)
 %doc BUGS CHANGES COPYRIGHT README* doc/*.html
-%attr(755,root,root) %{_sbindir}/*
-%attr(755,root,root) %ghost %{_libdir}/lib*.so.0
-%attr(755,root,root) %{_libdir}/lib*.so.*.*.*
+%attr(755,root,root) %{_sbindir}/login.radius
+%attr(755,root,root) %{_sbindir}/radacct
+%attr(755,root,root) %{_sbindir}/radexample
+%attr(755,root,root) %{_sbindir}/radlogin
+%attr(755,root,root) %{_sbindir}/radstatus
+%attr(755,root,root) %{_libdir}/libradiusclient.so.*.*.*
+%attr(755,root,root) %ghost %{_libdir}/libradiusclient.so.0
 %attr(750,root,root) %dir %{_sysconfdir}/radiusclient
-%attr(640,root,root) %config(missingok,noreplace) %verify(not md5 mtime size) %{_sysconfdir}/radiusclient/*
+%attr(640,root,root) %config(missingok,noreplace) %verify(not md5 mtime size) %{_sysconfdir}/radiusclient/dictionary
+%attr(640,root,root) %config(missingok,noreplace) %verify(not md5 mtime size) %{_sysconfdir}/radiusclient/dictionary.ascend
+%attr(640,root,root) %config(missingok,noreplace) %verify(not md5 mtime size) %{_sysconfdir}/radiusclient/dictionary.compat
+%attr(640,root,root) %config(missingok,noreplace) %verify(not md5 mtime size) %{_sysconfdir}/radiusclient/dictionary.merit
+%attr(640,root,root) %config(missingok,noreplace) %verify(not md5 mtime size) %{_sysconfdir}/radiusclient/issue
+%attr(640,root,root) %config(missingok,noreplace) %verify(not md5 mtime size) %{_sysconfdir}/radiusclient/port-id-map
+%attr(640,root,root) %config(missingok,noreplace) %verify(not md5 mtime size) %{_sysconfdir}/radiusclient/radiusclient.conf
+%attr(640,root,root) %config(missingok,noreplace) %verify(not md5 mtime size) %{_sysconfdir}/radiusclient/servers
 
 %files devel
 %defattr(644,root,root,755)
-%attr(755,root,root) %{_libdir}/lib*.so
-%{_libdir}/lib*.la
-%{_includedir}/*.h
+%attr(755,root,root) %{_libdir}/libradiusclient.so
+%{_libdir}/libradiusclient.la
+%{_includedir}/radiusclient.h
 
 %files static
 %defattr(644,root,root,755)
-%{_libdir}/lib*.a
+%{_libdir}/libradiusclient.a
